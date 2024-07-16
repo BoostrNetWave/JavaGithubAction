@@ -20,5 +20,5 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.DO_SSH_PRIVATE_KEY }}
         script: |
-          java -jar path/to/your/deploy.xml
+          java -jar /root/k/
    
