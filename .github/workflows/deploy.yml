@@ -45,8 +45,6 @@ jobs:
 
     - name: Test SSH connection and Java installation
       run: ssh -o StrictHostKeyChecking=no root@170.64.166.103 'java -version'
-
-    
       
     - name: Run Hello World Java program on server
       run: ssh -o StrictHostKeyChecking=no root@170.64.166.103 'java -jar /root/k/helloworld.jar'
