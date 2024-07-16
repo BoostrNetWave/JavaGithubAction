@@ -1,4 +1,4 @@
-name: Deploy
+name: Test SSH Connection
 
 on:
   push:
@@ -6,19 +6,19 @@ on:
       - main
 
 jobs:
-  deploy:
+  test-ssh:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Execute remote command via SSH
-      uses: appleboy/ssh-action@v0.1.3
+    - name: Set up SSH agent
+      uses: webfactory/ssh-agent@v0.5.3
       with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USERNAME }}
-        key: ${{ secrets.DO_SSH_PRIVATE_KEY }}
-        script: |
-          java -jar /root/k/
+        ssh-private-key: ${{ secrets.DO_SSH_PRIVATE_KEY }}
+
+    - name: Test SSH connection
+      run: ssh -vT root@170.64.166.103
+
    
