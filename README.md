@@ -1,6 +1,6 @@
 # JavaScriptGithubAction
 
-Here we test Github Action Through Deploy.yaml file
+# Here we test Github Action Through Deploy.yaml file
 
 name: Build and Deploy
 
