@@ -18,8 +18,11 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.DEPLOY }}
 
-    - name: Test SSH connection
-      run: ssh -o StrictHostKeyChecking=no root@170.64.166.103 'echo "SSH connection successful"'
+    - name: Test SSH connection and Java installation
+      run: ssh -o StrictHostKeyChecking=no root@170.64.166.103 'java -version'
 
-    - name: Deploy script
-      run: ssh -o StrictHostKeyChecking=no root@170.64.166.103 'java -jar root/deploy.xml'
+    - name: Copy JAR file to server
+      run: scp -o StrictHostKeyChecking=no helloworld.jar root@170.64.166.103:/root/k
+
+    - name: Run Hello World Java program on server
+      run: ssh -o StrictHostKeyChecking=no root@170.64.166.103 'java -jar /root/k/helloworld.jar'
