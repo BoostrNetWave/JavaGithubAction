@@ -18,7 +18,7 @@ jobs:
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
-        key: ${{ secrets.DEPLOY_KEY }}
+        key: ${{ secrets.DO_SSH_PRIVATE_KEY }}
         script: |
           java -jar path/to/your/deploy.xml
    
