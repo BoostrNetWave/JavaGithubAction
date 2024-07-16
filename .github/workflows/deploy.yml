@@ -1,4 +1,4 @@
-name: Test SSH Connection
+name: Deploy
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  test-ssh:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,9 +16,10 @@ jobs:
     - name: Set up SSH agent
       uses: webfactory/ssh-agent@v0.5.3
       with:
-        ssh-private-key: ${{ secrets.DEPLOY }}
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Test SSH connection
-      run: ssh -vT root@170.64.166.103
+      run: ssh -o StrictHostKeyChecking=no root@170.64.166.103 'echo "SSH connection successful"'
 
-   
+    - name: Deploy script
+      run: ssh -o StrictHostKeyChecking=no root@170.64.166.103 'java -jar root/deploy.xml'
