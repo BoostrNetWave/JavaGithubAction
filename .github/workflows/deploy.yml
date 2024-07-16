@@ -16,7 +16,7 @@ jobs:
     - name: Set up SSH agent
       uses: webfactory/ssh-agent@v0.5.3
       with:
-        ssh-private-key: ${{ secrets.DO_SSH_PRIVATE_KEY }}
+        ssh-private-key: ${{ secrets.DEPLOY }}
 
     - name: Test SSH connection
       run: ssh -vT root@170.64.166.103
