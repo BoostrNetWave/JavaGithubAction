@@ -13,6 +13,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Set up Java
+      run: ssh -o StrictHostKeyChecking=no root@170.64.166.103 'sudo apt update sudo apt install default-jdk'
+    
+
     - name: Create the Java source file
       run: |
         echo 'public class HelloWorld {
