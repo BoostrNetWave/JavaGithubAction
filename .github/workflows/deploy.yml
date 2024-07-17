@@ -15,8 +15,7 @@ jobs:
 
     - name: Set up Java
       run: ssh -o StrictHostKeyChecking=no root@170.64.166.103 'sudo apt update sudo apt install default-jdk'
-    
-
+  
     - name: Create the Java source file
       run: |
         echo 'public class HelloWorld {
