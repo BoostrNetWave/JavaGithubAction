@@ -12,11 +12,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-
-    - name: Set up Java
-      run: | 
-        sudo apt-get update 
-        sudo apt-get install default-jdk -y
   
     - name: Create the Java source file
       run: |
@@ -47,6 +42,11 @@ jobs:
       uses: webfactory/ssh-agent@v0.5.3
       with:
         ssh-private-key: ${{ secrets.DEPLOY }}
+
+    - name: Set up Java
+      run: | 
+        sudo apt-get update 
+        sudo apt-get install default-jdk -y
 
     - name: Test SSH connection and Java installation
       run: ssh -o StrictHostKeyChecking=no root@170.64.170.106 'java -version'
