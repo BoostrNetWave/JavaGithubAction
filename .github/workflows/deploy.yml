@@ -49,13 +49,13 @@ jobs:
         ssh-private-key: ${{ secrets.DEPLOY }}
 
     - name: Test SSH connection and Java installation
-      run: ssh -o StrictHostKeyChecking=no root@170.64.166.103 'java -version'
+      run: ssh -o StrictHostKeyChecking=no root@170.64.170.106 'java -version'
 
     - name: Copy JAR file to server
-      run: scp -o StrictHostKeyChecking=no helloworld.jar root@170.64.166.103:/root/k
+      run: scp -o StrictHostKeyChecking=no helloworld.jar root@170.64.170.106:/root/k
 
     - name: Verify JAR file on server
-      run: ssh -o StrictHostKeyChecking=no root@170.64.166.103 'ls -l /root/k/helloworld.jar'
+      run: ssh -o StrictHostKeyChecking=no root@170.64.170.106 'ls -l /root/k/helloworld.jar'
 
     - name: Run Hello World Java program on server
-      run: ssh -o StrictHostKeyChecking=no root@170.64.166.103 'java -jar /root/k/helloworld.jar'
+      run: ssh -o StrictHostKeyChecking=no root@170.64.170.106 'java -jar /root/k/helloworld.jar'
