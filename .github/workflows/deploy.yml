@@ -50,7 +50,7 @@ jobs:
       run: ssh -o StrictHostKeyChecking=no root@170.64.233.132 'java -version'
 
     - name: Copy JAR file to server
-      run: scp -o StrictHostKeyChecking=no helloworld.jar root@170.64.233.132:/root/k
+      run: scp -o StrictHostKeyChecking=no helloworld.jar root@170.64.233.132:/root/k2
 
     - name: Run Hello World Java program on server
-      run: ssh -o StrictHostKeyChecking=no root@170.64.233.132 'java -jar /root/k/helloworld.jar'
+      run: ssh -o StrictHostKeyChecking=no root@170.64.233.132 'java -jar /root/k2/helloworld.jar'
