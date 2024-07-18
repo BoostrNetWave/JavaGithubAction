@@ -44,9 +44,12 @@ jobs:
         ssh-private-key: ${{ secrets.DEPLOY }}
 
     - name: Set up Java
-      run: | 
-        sudo apt-get update 
+      run: |
+        sudo apt-get update
         sudo apt-get install default-jdk -y
+
+    - name: Verify Java installation
+      run: java -version
 
     - name: Test SSH connection and Java installation
       run: ssh -o StrictHostKeyChecking=no root@170.64.170.106 'java -version'
