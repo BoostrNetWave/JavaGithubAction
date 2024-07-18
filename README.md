@@ -1,3 +1,6 @@
+# When droplet you're created on digital ocean 
+# Public DEPLOY_PUBLIC key haing in Git Secretes Environment Use it On Droplet Authorized_keys
+
 **Before Apply Github Action In Platform Deploy or Running Server
 **
 Here’s how you can address this:
