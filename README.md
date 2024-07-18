@@ -1,5 +1,5 @@
 # When droplet you're created on digital ocean 
-# Public DEPLOY_PUBLIC key haing in Git Secretes Environment Use it On Droplet Authorized_keys
+# Public DEPLOY_PUBLIC key having in Git Secretes Environment Use it On Droplet Authorized_keys
 
 # During the creation of a DigitalOcean droplet and the setup of GitHub Actions, you'll be dealing with SSH keys to ensure secure access and automated deployment. Here's how you manage the SSH keys for both processes:
 
